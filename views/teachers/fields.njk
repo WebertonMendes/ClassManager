@@ -1,0 +1,84 @@
+<div class="information">
+  <div>Avatar url</div>
+  <div>
+    <input
+      type="url"
+      name="avatar"
+      placeholder="http://"
+      value="{{ teacher.avatar }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Nome completo</div>
+  <div>
+    <input
+      type="text"
+      name="name"
+      value="{{ teacher.name }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Data de nascimento</div>
+  <div>
+    <input
+      type="date"
+      name="date_birth"
+      value="{{ teacher.date_birth }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Grau de escolaridade</div>
+  <div>
+    <select name="school">
+      <option value="{{ teacher.school }}">{{ teacher.school }}</option>
+      <option value="medio">Ensino Médio Completo</option>
+      <option value="superior">Ensino Superior Completo</option>
+      <option value="mestrado">Mestrado</option>
+      <option value="doutorado">Doutorado</option>
+    </select>
+  </div>
+</div>
+
+<div class="information">
+  <div>Tipo de aula</div>
+  <div>
+    <span>
+      <input
+        type="radio"
+        name="type_class"
+        value="Presencial"
+        {% if teacher.type_class == 'Presencial' %}
+          checked
+        {% endif %}
+      >Presencial
+    </span>
+    <span>
+      <input
+        type="radio"
+        name="type_class"
+        value="À Distância"
+        {% if teacher.type_class == 'À Distância' %}
+          checked
+        {% endif %}
+      >À distância
+    </span>
+  </div>
+</div>
+
+<div class="information">
+  <div>Área de atuação</div>
+  <div>
+    <input
+      type="text"
+      name="occupation"
+      placeholder="Informe as áreas de atuação separadas por vírgula"
+      value="{{ teacher.occupation }}"
+    >
+  </div>
+</div>

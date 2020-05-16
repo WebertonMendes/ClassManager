@@ -1,0 +1,72 @@
+<div class="information">
+  <div>Avatar url</div>
+  <div>
+    <input
+      type="url"
+      name="avatar"
+      placeholder="http://"
+      value="{{ student.avatar }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Nome completo</div>
+  <div>
+    <input
+      type="text"
+      name="name"
+      value="{{ student.name }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>E-mail</div>
+  <div>
+    <input
+      type="email"
+      name="email"
+      value="{{ student.email }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Data de nascimento</div>
+  <div>
+    <input
+      type="date"
+      name="date_birth"
+      value="{{ student.date_birth }}"
+    >
+  </div>
+</div>
+
+<div class="information">
+  <div>Ano escolar</div>
+  <div>
+    <select name="schoolYear">
+      <option value="{{ student.schoolYear }}">{{ student.schoolYear }}</option>
+      <option value="5.EF">5º ano do ensino fundamental</option>
+      <option value="6.EF">6º ano do ensino fundamental</option>
+      <option value="7.EF">7º ano do ensino fundamental</option>
+      <option value="8.EF">8º ano do ensino fundamental</option>
+      <option value="9.EF">9º ano do ensino fundamental</option>
+      <option value="1.EM">1º ano do ensino médio</option>
+      <option value="2.EM">2º ano do ensino médio</option>
+      <option value="3.EM">3º ano do ensino médio</option>
+    </select>
+  </div>
+</div>
+
+<div class="information">
+  <div>Carga horária semanal</div>
+  <div>
+    <input
+      type="number"
+      name="workload"
+      value="{{ student.workload }}"
+    >
+  </div>
+</div>
