@@ -18,33 +18,33 @@
       {% for student in students %}
         <tr>
           <td>
-            <span id="profile-image" style="background-image: url({{ student.avatar }})"></span>
+            <span id="profile-image" style="background-image: url({{ student.avatar_url }})"></span>
             {{ student.name }}
           </td>
           <td>{{ student.email }}</td>
           <td>
-            {% if student.schoolYear == "5.EF" %}
+            {% if student.school_year == "5.EF" %}
               5º ano do ensino fundamental
             {% endif %}
-            {% if student.schoolYear == "6.EF" %}
+            {% if student.school_year == "6.EF" %}
               6º ano do ensino fundamental
             {% endif %}
-            {% if student.schoolYear == "7.EF" %}
+            {% if student.school_year == "7.EF" %}
               7º ano do ensino fundamental
             {% endif %}
-            {% if student.schoolYear == "8.EF" %}
+            {% if student.school_year == "8.EF" %}
               8º ano do ensino fundamental
             {% endif %}
-            {% if student.schoolYear == "9.EF" %}
+            {% if student.school_year == "9.EF" %}
               9º ano do ensino fundamental
             {% endif %}
-            {% if student.schoolYear == "1.EM" %}
+            {% if student.school_year == "1.EM" %}
               1º ano do ensino médio
             {% endif %}
-            {% if student.schoolYear == "2.EM" %}
+            {% if student.school_year == "2.EM" %}
               2º ano do ensino médio
             {% endif %}
-            {% if student.schoolYear == "3.EM" %}
+            {% if student.school_year == "3.EM" %}
               3º ano do ensino médio
             {% endif %}
           </td>

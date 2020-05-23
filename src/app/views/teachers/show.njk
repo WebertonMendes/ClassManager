@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="card">
-  <section class="avatar" style="background: url({{ teacher.avatar }}) no-repeat center center / cover"></section>
+  <section class="avatar" style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover"></section>
 
   <section class="details">
     <h3 id="title">Detalhes</h3>
@@ -20,22 +20,22 @@
 
     <div class="information">
       <div>Grau de Escolaridade</div>
-      <div>{{ teacher.school }}</div>
+      <div>{{ teacher.education_level }}</div>
     </div>
 
     <div class="information">
       <div>Tipo de aula</div>
-      <div>{{ teacher.type_class }}</div>
+      <div>{{ teacher.class_type }}</div>
     </div>
 
     <div class="information">
-      <div>Acompanhamento</div>
-      <div>{{ teacher.occupation }}</div>
+      <div>Área de atuação</div>
+      <div>{{ teacher.subjects_taught }}</div>
     </div>
 
     <div class="information">
       <div>Desde</div>
-      <div>{{ teacher.created }}</div>
+      <div>{{ teacher.created_at }}</div>
     </div>
     
     <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>

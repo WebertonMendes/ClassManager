@@ -3,9 +3,9 @@
   <div>
     <input
       type="url"
-      name="avatar"
+      name="avatar_url"
       placeholder="http://"
-      value="{{ student.avatar }}"
+      value="{{ student.avatar_url }}"
     >
   </div>
 </div>
@@ -37,8 +37,8 @@
   <div>
     <input
       type="date"
-      name="date_birth"
-      value="{{ student.date_birth }}"
+      name="birth_date"
+      value="{{ student.birth_date }}"
     >
   </div>
 </div>
@@ -46,8 +46,8 @@
 <div class="information">
   <div>Ano escolar</div>
   <div>
-    <select name="schoolYear">
-      <option value="{{ student.schoolYear }}">{{ student.schoolYear }}</option>
+    <select name="school_year">
+      <option value="{{ student.school_year }}">{{ student.school_year }}</option>
       <option value="5.EF">5º ano do ensino fundamental</option>
       <option value="6.EF">6º ano do ensino fundamental</option>
       <option value="7.EF">7º ano do ensino fundamental</option>

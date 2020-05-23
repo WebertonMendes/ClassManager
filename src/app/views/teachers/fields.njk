@@ -3,9 +3,9 @@
   <div>
     <input
       type="url"
-      name="avatar"
+      name="avatar_url"
       placeholder="http://"
-      value="{{ teacher.avatar }}"
+      value="{{ teacher.avatar_url }}"
     >
   </div>
 </div>
@@ -26,8 +26,8 @@
   <div>
     <input
       type="date"
-      name="date_birth"
-      value="{{ teacher.date_birth }}"
+      name="birth_date"
+      value="{{ teacher.birth_date }}"
     >
   </div>
 </div>
@@ -35,8 +35,8 @@
 <div class="information">
   <div>Grau de escolaridade</div>
   <div>
-    <select name="school">
-      <option value="{{ teacher.school }}">{{ teacher.school }}</option>
+    <select name="education_level">
+      <option value="{{ teacher.education_level }}">{{ teacher.education_level }}</option>
       <option value="medio">Ensino Médio Completo</option>
       <option value="superior">Ensino Superior Completo</option>
       <option value="mestrado">Mestrado</option>
@@ -51,9 +51,9 @@
     <span>
       <input
         type="radio"
-        name="type_class"
+        name="class_type"
         value="Presencial"
-        {% if teacher.type_class == 'Presencial' %}
+        {% if teacher.class_type == 'Presencial' %}
           checked
         {% endif %}
       >Presencial
@@ -61,9 +61,9 @@
     <span>
       <input
         type="radio"
-        name="type_class"
+        name="class_type"
         value="À Distância"
-        {% if teacher.type_class == 'À Distância' %}
+        {% if teacher.class_type == 'À Distância' %}
           checked
         {% endif %}
       >À distância
@@ -76,9 +76,9 @@
   <div>
     <input
       type="text"
-      name="occupation"
+      name="subjects_taught"
       placeholder="Informe as áreas de atuação separadas por vírgula"
-      value="{{ teacher.occupation }}"
+      value="{{ teacher.subjects_taught }}"
     >
   </div>
 </div>
