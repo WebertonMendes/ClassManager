@@ -1,13 +1,19 @@
-const { age, date, graduation } = require ('../../lib/utils')
+const { age, date  } = require ('../../lib/utils')
 const Teacher = require('../models/Teacher')
 
 module.exports = {
   index(req, res){
-
-    Teacher.all(function(teachers) {
-      return res.render("teachers/index", { teachers })
-    })
-
+    const { filter } = req.query
+    
+    if (filter) {
+      Teacher.findBy(filter, function(teachers) {
+        return res.render("teachers/index", { teachers, filter })
+      })
+    } else {
+      Teacher.all(function(teachers) {
+        return res.render("teachers/index", { teachers })
+      })
+    }
   },
   create(req, res){
     return res.render("teachers/create")
@@ -30,7 +36,6 @@ module.exports = {
       if(!teacher) return res.send("Teacher Not Found!")
 
       teacher.age = age(teacher.birth_date)
-      teacher.education_level = graduation(teacher.education_level)
       teacher.subjects_taught = teacher.subjects_taught.split(",")
       teacher.created_at = date(teacher.created_at).format
 
@@ -42,7 +47,6 @@ module.exports = {
       if(!teacher) return res.send("Teacher Not Found!")
       
       teacher.birth_date = date(teacher.birth_date).iso
-      teacher.education_level = graduation(teacher.education_level)
 
       return res.render("teachers/edit", { teacher })
     })

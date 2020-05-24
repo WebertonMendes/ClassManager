@@ -48,14 +48,14 @@
   <div>
     <select name="school_year">
       <option value="{{ student.school_year }}">{{ student.school_year }}</option>
-      <option value="5.EF">5º ano do ensino fundamental</option>
-      <option value="6.EF">6º ano do ensino fundamental</option>
-      <option value="7.EF">7º ano do ensino fundamental</option>
-      <option value="8.EF">8º ano do ensino fundamental</option>
-      <option value="9.EF">9º ano do ensino fundamental</option>
-      <option value="1.EM">1º ano do ensino médio</option>
-      <option value="2.EM">2º ano do ensino médio</option>
-      <option value="3.EM">3º ano do ensino médio</option>
+      <option value="5º ano do ensino fundamental">5º ano do ensino fundamental</option>
+      <option value="6º ano do ensino fundamental">6º ano do ensino fundamental</option>
+      <option value="7º ano do ensino fundamental">7º ano do ensino fundamental</option>
+      <option value="8º ano do ensino fundamental">8º ano do ensino fundamental</option>
+      <option value="9º ano do ensino fundamental">9º ano do ensino fundamental</option>
+      <option value="1º ano do ensino médio">1º ano do ensino médio</option>
+      <option value="2º ano do ensino médio">2º ano do ensino médio</option>
+      <option value="3º ano do ensino médio">3º ano do ensino médio</option>
     </select>
   </div>
 </div>
@@ -68,5 +68,22 @@
       name="workload"
       value="{{ student.workload }}"
     >
+  </div>
+</div>
+
+<div class="information">
+  <div>Professor(a)</div>
+  <div>
+    <select name="teacher">
+      <option value="">Selecione o Professor(a)</option>
+      {% for teacher in teacherOptions %}
+        <option value="{{ teacher.id }}"
+          {% if student.teacher_id == teacher.id %}
+            selected
+          {% endif %}>
+          {{ teacher.name }}
+        </option>
+      {% endfor %}
+    </select>
   </div>
 </div>

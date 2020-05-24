@@ -1,16 +1,18 @@
-const { date, grade } = require ('../../lib/utils')
+const { date } = require ('../../lib/utils')
 const Student = require('../models/Student')
 
 module.exports = {
   index(req, res){
-
     Student.all(function(students) {
+
       return res.render("students/index", { students })
     })
 
   },
   create(req, res){
-    return res.render("students/create")
+    Student.teachersSelectOptions(function(options) {
+      return res.render("students/create", { teacherOptions: options })
+    })
   },
   post(req, res){
     const keys = Object.keys(req.body)
@@ -30,7 +32,6 @@ module.exports = {
       if(!student) return res.send("Student Not Found!")
 
       student.birth_date = date(student.birth_date).birthDate
-      student.school_year = grade(student.school_year)
 
       return res.render("students/show", { student })
     })
@@ -40,9 +41,10 @@ module.exports = {
       if(!student) return res.send("Student Not Found!")
       
       student.birth_date = date(student.birth_date).iso
-      student.school_year = grade(student.school_year)
 
-      return res.render("students/edit", { student })
+      Student.teachersSelectOptions(function(options) {
+        return res.render("students/edit", { student, teacherOptions: options })
+      })
     })
   },
   put(req, res){

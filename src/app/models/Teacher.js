@@ -1,13 +1,19 @@
-const { date, graduation } = require ('../../lib/utils')
+const { date } = require ('../../lib/utils')
 const db = require ('../../config/db')
 
 module.exports = {
     all(callback) {
-        db.query(`SELECT * FROM teachers ORDER BY name ASC`, function(err, results) {
-            if(err) throw `Database Error! ${err}`
-
-            callback(results.rows)
-        })
+        db.query(`
+            SELECT teachers.*, COUNT(students) AS total_students
+            FROM teachers
+            LEFT JOIN students ON (students.teacher_id = teachers.id)
+            GROUP BY teachers.id
+            ORDER BY teachers.name`,
+            function(err, results) {
+                if(err) throw `Database Error! ${err}`
+                callback(results.rows)
+            }
+        )
     },
     create(data, callback) {
         const query = `
@@ -26,7 +32,7 @@ module.exports = {
             data.avatar_url,
             data.name,
             date(data.birth_date).iso,
-            graduation(data.education_level),
+            data.education_level,
             data.class_type,
             data.subjects_taught,
             date(Date.now()).iso
@@ -48,6 +54,21 @@ module.exports = {
                 callback(results.rows[0])
             })
     },
+    findBy(filter, callback) {
+        db.query(`
+            SELECT teachers.*, COUNT(students) AS total_students
+            FROM teachers
+            LEFT JOIN students ON (students.teacher_id = teachers.id)
+            WHERE teachers.name ILIKE '%${filter}%'
+            OR teachers.subjects_taught ILIKE '%${filter}%'
+            GROUP BY teachers.id
+            ORDER BY teachers.name`,
+            function(err, results) {
+                if(err) throw `Database Error! ${err}`
+                callback(results.rows)
+            }
+        )
+    },
     update(data, callback) {
         const query = 
             `UPDATE teachers SET
@@ -63,7 +84,7 @@ module.exports = {
             data.avatar_url,
             data.name,
             date(data.birth_date).iso,
-            graduation(data.education_level),
+            data.education_level,
             data.class_type,
             data.subjects_taught,
             data.id
