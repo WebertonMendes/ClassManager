@@ -117,7 +117,7 @@ module.exports = {
         if (filter) {
             filterQuery = `
                 WHERE teachers.name ILIKE '%${filter}%'
-                OR teachers.subjects_taught ILKE '%${filter}%'
+                OR teachers.subjects_taught ILIKE '%${filter}%'
             `
 
             totalQuery = `(

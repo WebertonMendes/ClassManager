@@ -105,7 +105,7 @@ module.exports = {
         if (filter) {
             filterQuery = `
                 WHERE students.name ILIKE '%${filter}%'
-                OR students.email ILKE '%${filter}%'
+                OR students.email ILIKE '%${filter}%'
             `
 
             totalQuery = `(
