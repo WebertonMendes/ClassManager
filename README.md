@@ -1,6 +1,6 @@
 # Class Manager
 
-![](https://raw.githubusercontent.com/WebertonMendes/GymManager/master/screen/GymManager10_Logo.png)
+![](https://raw.githubusercontent.com/WebertonMendes/ClassManager/master/screen/ClassManager10_Logo.png)
 <br>
 ##### Aplicação desenvolvida durante o curso Launchbase da <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>.
 
@@ -29,28 +29,28 @@ $ npm start
 ### Telas da Aplicação
 
 > Página Home
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager1_Home.png?raw=true)<br>
 
 > Página de Professores (Listagem)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager2_Teachers_Index.png?raw=true)<br>
 
 > Página de Professores (Adicionar novo professor)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager3_Teachers_Add.png?raw=true)<br>
 
 > Página de Professores (Visualizar professor)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager4_Teachers_View.png?raw=true)<br>
 
 > Página de Professores (Editar professor)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager5_Teachers_Edit.png?raw=true)<br>
 
 > Página de Alunos (Listagem)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager6_Students_Index.png?raw=true)<br>
 
 > Página de Alunos (Adicionar novo aluno)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager7_Students_Add.png?raw=true)<br>
 
 > Página de Alunos (Visualizar aluno)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager8_Students_View.png?raw=true)<br>
 
 > Página de Alunos (Editar aluno)
-![]()<br>
+![](https://github.com/WebertonMendes/ClassManager/blob/master/screen/ClassManager9_Students_Edit.png?raw=true)<br>
